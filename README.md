@@ -1,5 +1,5 @@
 ### PARTIE 1 : Depot local : Comprendre le suivi de versions
-# Git Practice :
+# Git Practice - version A et version B :
 (Message genere par la commande : echo "# Git Practice" > README.md qui a efface le contenu de ce que j'avais deja ecris... heureusement qu'il y a CTRL + Z)
 
 ## Etape 1.1 : Initialiser un depot Local
@@ -87,3 +87,119 @@ R :
 
 # Q : Que se passe-t-il si on les commit quand meme ?
 R : Le dossier devient unitilement lour et il y a aussi le risque d'exposer publiquement les clefs secretes aux robots malveillants.
+<<<<<<< HEAD
+=======
+
+
+### Partie 3 : Branches : Comprendre le travail isole
+
+## Etape 3.1 : Creer une branche de travail
+
+# Q : Pourquoi ne travaille-t-on pas directment sur main ?
+R : Pour eviter de casser le code stable qui fonctionne deja en production et permettre a plusieurs developpeurs de travailler en meme temps sans se bloquer
+
+# Q : Que represente une branche par rapport au depot princial ? 
+R : Elle represente une ligne de developpement parallele isolee. C'est une copie virtuelle de l'etat du code a un instant T pour faire des tests en securite
+
+## Etape 3.2 : Modifier, commiter et pousser la branche
+
+# Q : Que remarquez-vous sur GitHub ares ce push (dans la liste de branches) ?
+R : Une nouvelle branhe nommee feature/about-page apparaitb dans le menu deroulant des branches. GitHUb affiche une baniere jaune proposant de creer un Pull Request pour cette branche.
+
+# Q : La branche main a-t-elle changee ?
+R : Non la branche main reste identique et n'integre pas encore les modifications du fichier about.html
+
+
+#### Partie 4 – Pull Request : comprendre la revue de code
+
+## Étape 4.1 : Ouvrir une Pull Request
+
+# Q : À quoi sert une Pull Request si on peut techniquement pousser directement sur main ?
+R : Elle permet de soumettre les modifications aux autres membres pour relecture et discussion avant de fusionner... C'est un espace essentiel pour s'assurer de la qualite du code (revue du code)
+
+# Q : Dans une equipe qui devrait valider une PR avant de fusionner ?
+R : La validation par au moins un autre developpeur de l'equique
+
+## Étape 4.2 : Fusionner la Pull Request
+
+# Q : Pourquoi faut-il faire un git pull sur main ares avoir merge la PR sur GitHub, alors que le merge a deja eu lieu sur GitHub ?
+R : La fusion a eu lieu uniquement sur les serveurs distants de GitHub....  Le depot local sur la machine n'est pas au courant de cette modification... De ce fait la commande "git pull"est indispensable pour recuperer l'historique mis a jour et synchroniser le  dossier de travail local
+
+#### Partie 5 : Conflit de fusion (merge conflict)
+
+## Étape 5.1 : Créer un conflit volontairement
+
+## Étape 5.2 : Résoudre le conflit en local
+
+# Q : Pourquoi ce conflit s'est-il produit ?
+
+R : Le conflit s'est produit parce que les branches branch-a et branch-b ont modifié différemment la même ligne du fichier README.md. Lors de la fusion, Git n'a pas pu déterminer automatiquement quelle version conserver. Il a donc interrompu la fusion et demandé une intervention manuelle.
+
+# Q : Que représentent exactement <<<<<<<, ======= et >>>>>>> ?
+
+R : Ce sont des marqueurs de conflit ajoutés temporairement par Git.
+
+- <<<<<<< HEAD marque le début du conflit et indique le contenu de la branche actuelle (HEAD).
+- ======= sépare les deux versions en conflit.
+- >>>>>>> branch-a marque la fin du conflit et indique que la seconde version provient de la branche branch-a.
+
+Ces marqueurs doivent être supprimes apres avoir choisi ou combine le contenu souhaite.
+
+# Q : Comment aurait-on pu éviter ce conflit en amont ?
+
+R : On peut réduire les risques de conflit en synchronisant régulièrement sa branche avec main, en communiquant avec les autres développeurs pour éviter de modifier les mêmes parties d'un fichier en même temps, et en réalisant des fusions fréquentes plutôt que d'attendre longtemps avant de fusionner
+
+
+#### Partie 6 – Collaboration : Fork et contribution externe
+
+## Étape 6.1 : Fork et clone
+
+# Q : Quelle est la différence entre un Fork et un Clone ?
+R :
+
+# Q : Pourquoi ce fork est-il nécessaire quand on n'a pas les droits d'écriture sur le dépôt d'origine ?
+R :
+
+## Étape 6.2 : Contribuer via Pull Request
+
+# Q : Dans ce modèle de contribution par Fork + Pull Request, qui garde le contrôle final sur le dépôt d'origine ?
+R :
+
+# Q : Pourquoi ne pas donner directement les droits d'écriture à tout le monde ?
+R :
+
+
+#### Partie 7 – Issues : suivre les tâches et les problèmes
+
+## Étape 7.1 : Créer une Issue
+
+# Q : À quoi sert une Issue par rapport à un simple message Git ?
+R :
+
+## Étape 7.2 : Lier une Pull Request à l'Issue
+
+# Q : À quoi sert une Issue par rapport à un Pull Request ?
+R :
+
+# Q : En automatisant la fermeture d'une Issue avec une Pull Request, qu'est-ce que cela apporte ?
+R :
+
+
+#### Partie 8 (bonus) – Versionner et annuler
+
+## Étape 8.1 : Créer un tag de version
+
+# Q : À quoi sert un tag Git ?
+R :
+
+# Q : Pourquoi utiliser une version numérotée (v1.0.0) plutôt qu'un simple commit ?
+R :
+
+## Étape 8.2 : Comprendre revert vs reset
+
+# Q : Quelle est la différence fondamentale entre git revert et git reset --hard ?
+R :
+
+# Q : Lequel est préférable lorsqu'une branche est déjà partagée avec l'équipe et pourquoi ?
+R :
+>>>>>>> branch-a
