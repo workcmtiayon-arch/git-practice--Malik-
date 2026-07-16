@@ -1,5 +1,5 @@
 ### PARTIE 1 : Depot local : Comprendre le suivi de versions
-# Git Practice :
+# Git Practice - version B :
 (Message genere par la commande : echo "# Git Practice" > README.md qui a efface le contenu de ce que j'avais deja ecris... heureusement qu'il y a CTRL + Z)
 
 ## Etape 1.1 : Initialiser un depot Local
