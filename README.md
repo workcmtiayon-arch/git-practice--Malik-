@@ -129,16 +129,25 @@ R : La fusion a eu lieu uniquement sur les serveurs distants de GitHub....  Le d
 
 ## Étape 5.1 : Créer un conflit volontairement
 
-# Q : Pourquoi ce conflit s'est-il produit ?
-R : 
-
 ## Étape 5.2 : Résoudre le conflit en local
 
-# Q : Pourquoi Git affiche exactement les marqueurs <<<<<<< ======= >>>>>>> ?
-R : 
+# Q : Pourquoi ce conflit s'est-il produit ?
 
-# Q : Comment auriez-vous pu éviter ce conflit en amont ?
-R :
+R : Le conflit s'est produit parce que les branches branch-a et branch-b ont modifié différemment la même ligne du fichier README.md. Lors de la fusion, Git n'a pas pu déterminer automatiquement quelle version conserver. Il a donc interrompu la fusion et demandé une intervention manuelle.
+
+# Q : Que représentent exactement <<<<<<<, ======= et >>>>>>> ?
+
+R : Ce sont des marqueurs de conflit ajoutés temporairement par Git.
+
+- <<<<<<< HEAD marque le début du conflit et indique le contenu de la branche actuelle (HEAD).
+- ======= sépare les deux versions en conflit.
+- >>>>>>> branch-a marque la fin du conflit et indique que la seconde version provient de la branche branch-a.
+
+Ces marqueurs doivent être supprimes apres avoir choisi ou combine le contenu souhaite.
+
+# Q : Comment aurait-on pu éviter ce conflit en amont ?
+
+R : On peut réduire les risques de conflit en synchronisant régulièrement sa branche avec main, en communiquant avec les autres développeurs pour éviter de modifier les mêmes parties d'un fichier en même temps, et en réalisant des fusions fréquentes plutôt que d'attendre longtemps avant de fusionner
 
 
 #### Partie 6 – Collaboration : Fork et contribution externe
